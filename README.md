@@ -11,3 +11,12 @@
 [Click this link to generate this project](https://github.com/iamssen/vscode-touchbar/generate)
 
 And read this link <https://code.visualstudio.com/api/working-with-extensions/publishing-extension>
+
+```
+  "keyboard.touchbar.ignored": [
+    "workbench.action.debug.start",
+    "workbench.action.debug.run",
+    "workbench.action.navigateBack",
+    "workbench.action.navigateForward",
+  ],
+```

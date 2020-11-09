@@ -1,19 +1,19 @@
 {
-  "name": "vscode-ssen-touchbar",
-  "version": "0.1.2",
-  "description": "SSen's Touchbar Setting",
+  "name": "vscode-touchbar",
+  "version": "0.1.0",
+  "description": "Touchbar Setting",
   "main": "main.js",
   "scripts": {
     "test": "npm test",
-    "publish": "vsce package && open . && open https://marketplace.visualstudio.com/manage/publishers/iamssen",
+    "publish": "vsce package && open . && open https://marketplace.visualstudio.com/manage/publishers/mehmetcansahin",
     "pack": "vsce package"
   },
-  "author": "Seoyeon Lee <i@ssen.name>",
-  "publisher": "iamssen",
+  "author": "MehmetCan ŞAHİN <sahinmcan@gmail.com>",
+  "publisher": "mehmetcansahin",
   "license": "MIT",
-  "repository": "github:iamssen/vscode-touchbar",
-  "bugs": "https://github.com/iamssen/vscode-touchbar/issues",
-  "homepage": "https://github.com/iamssen/vscode-touchbar",
+  "repository": "github:mehmetcansahin/vscode-touchbar",
+  "bugs": "https://github.com/mehmetcansahin/vscode-touchbar/issues",
+  "homepage": "https://github.com/mehmetcansahin/vscode-touchbar",
   "engines": {
     "vscode": "^1.17.0"
   },
@@ -23,73 +23,77 @@
   "contributes": {
     "commands": [
       {
-        "command": "editor.action.revealDefinition",
-        "title": "Go To Definition"
+        "command": "mehmetcansahin.touchbar.bracket",
+        "title": "[]"
       },
       {
-        "command": "editor.action.goToReferences",
-        "title": "Go To References"
+        "command": "mehmetcansahin.touchbar.curly",
+        "title": "{}"
       },
       {
-        "command": "workbench.action.showCommands",
-        "title": "CMD"
+        "command": "mehmetcansahin.touchbar.arrow",
+        "title": "<>"
       },
       {
-        "command": "typescript.restartTsServer",
-        "title": "Restart TSServer"
+        "command": "mehmetcansahin.touchbar.parentheses",
+        "title": "()"
       },
       {
-        "command": "ssen.touchbar.run",
-        "title": "Run"
+        "command": "workbench.action.terminal.toggleTerminal",
+        "title": "⬓"
       },
       {
-        "command": "ssen.touchbar.debug",
-        "title": "Debug"
+        "command": "workbench.action.toggleSidebarVisibility",
+        "title": "◧"
       },
       {
-        "command": "workbench.action.terminal.openNativeConsole",
-        "title": "Terminal"
+        "command": "editor.action.blockComment",
+        "when": "editorFocus",
+        "title": "//"
       }
     ],
     "menus": {
       "touchBar": [
         {
-          "command": "editor.action.goToReferences",
-          "group": "g2",
-          "when": "editorHasReferenceProvider"
+          "command": "mehmetcansahin.touchbar.parentheses",
+          "order": 1,
+          "group": "touchbarSymbols"
         },
         {
-          "command": "editor.action.revealDefinition",
-          "group": "g1",
-          "when": "editorHasDefinitionProvider"
+          "command": "mehmetcansahin.touchbar.curly",
+          "order": 2,
+          "group": "touchbarSymbols"
         },
         {
-          "command": "workbench.action.showCommands",
-          "group": "g3"
+          "command": "mehmetcansahin.touchbar.arrow",
+          "order": 3,
+          "group": "touchbarSymbols"
         },
         {
-          "command": "typescript.restartTsServer",
-          "group": "g4"
+          "command": "mehmetcansahin.touchbar.bracket",
+          "order": 4,
+          "group": "touchbarSymbols"
         },
         {
-          "command": "ssen.touchbar.run",
-          "group": "g5",
-          "when": "!inDebugMode"
+          "command": "workbench.action.terminal.toggleTerminal",
+          "title": "⬓",
+          "group": "touchbarEditor"
         },
         {
-          "command": "ssen.touchbar.debug",
-          "group": "g6",
-          "when": "!inDebugMode"
+          "command": "workbench.action.toggleSidebarVisibility",
+          "title": "◧",
+          "group": "touchbarEditor"
         },
         {
-          "command": "workbench.action.terminal.openNativeConsole",
-          "group": "g7"
+          "command": "editor.action.blockComment",
+          "when": "editorFocus",
+          "title": "//"
         }
       ]
     },
     "configuration": {
       "type": "object",
-      "title": "SSen's Touchbar Config"
+      "title": "touchbar"
     }
   }
 }
